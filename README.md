@@ -49,7 +49,7 @@ pip install selenium
 🛠️ CATATAN PENTING:
 ----------------------------------
 - Script ini bekerja secara **headless** (tanpa membuka browser secara nyata).
-- Pastikan `cookies.txt` valid dan hasil export dari browser (gunakan ekstensi seperti EditThisCookie).
+- Pastikan `cookies.txt` valid dan hasil export dari browser (saran gunakan ekstensi berikut : https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm).
 - Jangan gunakan akun utama sebelum diuji dulu.
 - Tidak menjamin akun bebas dari suspend jika digunakan berlebihan/spam.
 
@@ -66,7 +66,6 @@ pip install selenium
 - Jeda antar akun: 1–2 menit (acak)
 - Jeda antar aksi (follow/retweet/komentar): 20–45 detik (acak)
 
-💬 KONTAK:
 ----------------------------------
-Jika ada kendala atau ingin kustomisasi script, silakan hubungi pembuat.
+Jika ada kendala silahkan 1000000 akun twitter
 
