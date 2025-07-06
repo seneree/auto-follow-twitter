@@ -1,78 +1,74 @@
 
-# 🐦 Auto Follow Twitter (X.com) via Selenium Headless
+=============================
+README - TWITTER AUTO TOOL
+=============================
 
-Script Python untuk melakukan auto-follow akun Twitter (X.com) menggunakan cookies login dan Selenium dalam mode headless (tanpa membuka browser). Cocok untuk penggunaan massal dan otomatisasi airdrop/farming sosial.
+📌 DESKRIPSI:
+Script Python ini dibuat untuk mengotomatiskan interaksi di platform Twitter/X menggunakan login cookies. Tersedia beberapa fitur utama yang bisa digunakan untuk banyak akun sekaligus, seperti:
+1. Auto Follow
+2. Auto Retweet
+3. Auto Komentar Massal
+4. Validasi & Format Cookies
 
----
+⚙️ FITUR UTAMA:
+----------------------------------
+✅ Menu 0 - Validasi Cookies:
+   - Memformat cookies mentah dari file `cookies.txt` menjadi `cookies.json`.
+   - Format `cookies.txt`: JSON per akun, dipisahkan oleh 1 baris kosong.
 
-## ✨ Fitur
+✅ Menu 1 - Auto Follow:
+   - Memfollow akun Twitter/X dari daftar username/profil yang kamu masukkan.
 
-- 🔁 Auto-follow akun X (Twitter) dengan banyak akun (multi-cookie).
-- 🧼 Membersihkan `cookies.txt` menjadi `cookies.json` siap pakai.
-- 🤖 Headless: tidak membuka jendela browser (otomatis di background).
-- 🔐 Menghindari deteksi bot dengan rotasi User-Agent dan manipulasi `webdriver`.
-- 📋 Menu CLI sederhana dan interaktif.
+✅ Menu 2 - Auto Retweet:
+   - Me-retweet postingan yang kamu masukkan (bisa banyak sekaligus).
 
----
+✅ Menu 3 - Auto Komentar Massal:
+   - Setiap akun memberikan komentar berbeda (berdasarkan urutan) ke satu/lebih postingan target.
+   - Komentar diambil dari file `komentar.txt` (blok komentar per akun dipisah 1 baris kosong).
 
-## 🧩 Struktur File
+🗃️ STRUKTUR FILE YANG DIPERLUKAN:
+----------------------------------
+1. `cookies.txt`       ➜ File cookies mentah (JSON per akun dipisahkan baris kosong).
+2. `cookies.json`      ➜ Hasil dari Menu 0 (cookie yang valid).
+3. `komentar.txt`      ➜ Komentar untuk Menu 3 (tiap blok komentar = 1 akun).
+4. `chromedriver.exe`  ➜ Pastikan Chrome Driver cocok dengan versi Google Chrome.
 
-| File             | Keterangan                                                  |
-|------------------|-------------------------------------------------------------|
-| `twitter.py`     | Script utama auto-follow dan pembersih cookies.             |
-| `cookies.txt`    | File input cookies mentah (1 blok JSON per akun, dipisah enter). |
-| `cookies.json`   | Hasil pembersihan cookie, siap dipakai untuk follow.        |
+📦 DEPENDENSI YANG WAJIB DIPASANG:
+----------------------------------
+Install semua kebutuhan dengan perintah berikut:
 
----
-
-## ⚙️ Cara Menjalankan
-
-### 1. Install Python dan Modul yang Dibutuhkan
-
-Pastikan Python 3.8+ sudah terinstall. Lalu jalankan:
-
-```bash
 pip install selenium
-```
 
-### 2. Download ChromeDriver
+🧠 CARA MENJALANKAN:
+----------------------------------
+1. Jalankan script dengan: 
+   python namascript.py
 
-- Cek versi Google Chrome kamu: buka `chrome://settings/help`
-- Download driver yang cocok dari: https://chromedriver.chromium.org/downloads
-- Letakkan `chromedriver.exe` di folder project atau folder PATH
+2. Ikuti petunjuk menu di terminal:
+   - Gunakan dulu Menu 0 untuk mengubah `cookies.txt` ➜ `cookies.json`
+   - Gunakan Menu 1, 2, atau 3 sesuai kebutuhan
 
-### 3. Jalankan Script
+🛠️ CATATAN PENTING:
+----------------------------------
+- Script ini bekerja secara **headless** (tanpa membuka browser secara nyata).
+- Pastikan `cookies.txt` valid dan hasil export dari browser (gunakan ekstensi seperti EditThisCookie).
+- Jangan gunakan akun utama sebelum diuji dulu.
+- Tidak menjamin akun bebas dari suspend jika digunakan berlebihan/spam.
 
-```bash
-python twitter.py
-```
-
-Ikuti menu yang muncul di terminal.
-
----
-
-## 📝 Format Cookies.txt
-
-Isi file `cookies.txt` seperti ini, **1 akun per blok JSON**, dipisah enter:
-
-```
+📁 CONTOH FORMAT `cookies.txt`:
+----------------------------------
 [
-  {"name": "auth_token", "value": "xxxx", "domain": ".x.com"},
-  {"name": "ct0", "value": "yyyy", "domain": ".x.com"}
+  { "name": "auth_token", "value": "xxxx", ... },
+  { "name": "ct0", "value": "xxxx", ... },
+  ...
 ]
 
-[
-  {"name": "auth_token", "value": "zzzz", "domain": ".x.com"},
-  {"name": "ct0", "value": "wwww", "domain": ".x.com"}
-]
-```
+⏱️ JEDA OTOMATIS:
+----------------------------------
+- Jeda antar akun: 1–2 menit (acak)
+- Jeda antar aksi (follow/retweet/komentar): 20–45 detik (acak)
 
-Setelah dibersihkan, file `cookies.json` akan berisi array cookie dalam format Python dict per akun.
+💬 KONTAK:
+----------------------------------
+Jika ada kendala atau ingin kustomisasi script, silakan hubungi pembuat.
 
----
-
-## 🛡️ Catatan Penting
-
-- Jangan gunakan akun utama! Gunakan akun dummy atau farming.
-- Pastikan cookies valid dan belum kadaluarsa.
-- Jangan share file `cookies.txt` atau `cookies.json` ke publik.
