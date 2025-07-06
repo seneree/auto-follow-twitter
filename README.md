@@ -28,7 +28,7 @@ Script Python ini dibuat untuk mengotomatiskan interaksi di platform Twitter/X m
 ----------------------------------
 1. `cookies.txt`       ➜ File cookies mentah (JSON per akun dipisahkan baris kosong).
 2. `cookies.json`      ➜ Hasil dari Menu 0 (cookie yang valid).
-3. `komentar.txt`      ➜ Komentar untuk Menu 3 (tiap blok komentar = 1 akun).
+3. `komentar.txt`      ➜ Komentar untuk Menu 3 (Pisahkan setiap komentar antar akun dengan 1 baris kosong, 1 komentar  = 1 akun).
 4. `chromedriver.exe`  ➜ Pastikan Chrome Driver cocok dengan versi Google Chrome.
 
 📦 DEPENDENSI YANG WAJIB DIPASANG:
